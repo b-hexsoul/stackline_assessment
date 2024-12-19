@@ -1,11 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { ProductState } from '../../interfaces/products';
+import { Product, ProductState } from '../../interfaces/products';
 
 export const fetchProduct = createAsyncThunk(
   'product/fetchProduct',
-  async () => {
-    const data = await import('../../../public/stackline_frontend_assessment_data_2021.json')
-    return data.default;
+  async (): Promise<Product[]> => {
+    const response = await fetch('/stackline_frontend_assessment_data_2021.json');
+    if (!response.ok) {
+      throw new Error(`Failed to fetch products: ${response.statusText}`);
+    }
+    return response.json() as Promise<Product[]>;
   }
 );
 

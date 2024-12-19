@@ -12,7 +12,7 @@ function ProductInfoAside({ product }: { product: Product }) {
       <div className='flex flex-wrap gap-3 p-4 border-b border-gray-200'>
         {product.tags.map(tag => {
           return (
-            <Pill text={tag} />
+            <Pill key={tag} text={tag} />
           )
         })}
       </div>
