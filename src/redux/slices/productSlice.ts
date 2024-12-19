@@ -4,7 +4,7 @@ import { Product, ProductState } from '../../interfaces/products';
 export const fetchProduct = createAsyncThunk(
   'product/fetchProduct',
   async (): Promise<Product[]> => {
-    const response = await fetch('/stackline_frontend_assessment_data_2021.json');
+    const response = await fetch('/stackline_frontend_assessment_data_2021.json?url');
     if (!response.ok) {
       throw new Error(`Failed to fetch products: ${response.statusText}`);
     }
