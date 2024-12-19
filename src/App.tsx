@@ -1,10 +1,11 @@
 import { Provider } from 'react-redux';
 import { store } from './redux/store/store';
+import ProductView from './pages/ProductView';
 
 function App() {
   return (
     <Provider store={store}>
-      <h1>hi</h1>
+      <ProductView />
     </Provider>
   )
 }
