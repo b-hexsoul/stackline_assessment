@@ -26,12 +26,10 @@ const productSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchProduct.fulfilled, (state, action) => {
-        console.log('fulfilled?');
         state.loading = false;
         state.products = action.payload;
       })
       .addCase(fetchProduct.rejected, (state) => {
-        console.log('error?');
         state.loading = false;
         state.error = 'An error occurred';
       });
