@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../redux/store/store';
 import { fetchProduct } from '../redux/slices/productSlice';
 import Logo from '../assets/stackline_logo.svg?react';
+import SalesChart from '../components/SalesChart';
+import ProductTable from '../components/ProductTable';
 import ProductInfoAside from '../components/ProductInfoAside';
 
 function ProductView() {
@@ -32,7 +34,8 @@ function ProductView() {
         <ProductInfoAside product={products[0]} />
 
         <div className='flex-col w-full min-h-[700px]'>
-          charts
+          <SalesChart product={products[0]} />
+          <ProductTable product={products[0]} />
         </div>
       </section>
     </div>
